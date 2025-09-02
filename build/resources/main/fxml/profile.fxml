@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.telegram.controllers.ProfileController">
+   <center>
+      <VBox spacing="20.0" styleClass="main-container">
+         <children>
+            <!-- Profile Header -->
+            <VBox alignment="CENTER" spacing="15.0">
+               <children>
+                  <StackPane>
+                     <Circle fx:id="profileImageCircle" fill="#E0E0E0" radius="60.0" stroke="#CCCCCC" strokeWidth="2.0" />
+                     <ImageView fx:id="profileImageView" fitHeight="120.0" fitWidth="120.0" preserveRatio="true" visible="false">
+                        <clip>
+                           <Circle radius="60.0" />
+                        </clip>
+                     </ImageView>
+                     <Button fx:id="changeProfilePictureButton" onAction="#handleChangeProfilePicture" styleClass="camera-button" text="📷" textFill="GRAY" StackPane.alignment="BOTTOM_RIGHT">
+                     </Button>
+                  </StackPane>
+                  <Label fx:id="usernameLabel" styleClass="section-title" text="@username" />
+               </children>
+            </VBox>
+            
+            <!-- Profile Information Form -->
+            <VBox spacing="15.0">
+               <children>
+                  <Label styleClass="page-title" text="Profile Information" />
+                  
+                  <VBox spacing="8.0">
+                     <children>
+                        <Label text="Display Name:" />
+                        <TextField fx:id="profileNameField" promptText="Your display name" />
+                     </children>
+                  </VBox>
+                  
+                  <VBox spacing="8.0">
+                     <children>
+                        <Label text="Bio:" />
+                        <TextArea fx:id="bioField" maxHeight="80.0" prefRowCount="3" promptText="Tell others about yourself..." wrapText="true" />
+                     </children>
+                  </VBox>
+                  
+                  <VBox spacing="8.0">
+                     <children>
+                        <Label text="Username:" />
+                        <TextField fx:id="usernameField" promptText="Your username" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            
+            <!-- Action Buttons - Multiple buttons (own profile) -->
+            <HBox fx:id="multiButtonContainer" alignment="CENTER" spacing="15.0" styleClass="button-container">
+               <children>
+                  <Button fx:id="saveButton" onAction="#handleSaveProfile" styleClass="primary-action-button" text="Save Changes" />
+                  <Button fx:id="cancelButton" onAction="#handleCancel" styleClass="secondary-action-button" text="Cancel" />
+                  <Region fx:id="buttonSpacer" HBox.hgrow="ALWAYS" />
+                  <Button fx:id="logoutButton" onAction="#handleLogout" styleClass="danger-button" text="Logout" />
+               </children>
+            </HBox>
+            
+            <!-- Action Buttons - Single cancel button (other user's profile) -->
+            <HBox fx:id="singleButtonContainer" alignment="CENTER_LEFT" spacing="15.0" styleClass="button-container" visible="false" managed="false">
+               <children>
+                  <Button fx:id="cancelButtonAlt" onAction="#handleCancel" styleClass="secondary-action-button" text="Cancel" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
