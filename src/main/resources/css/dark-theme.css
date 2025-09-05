@@ -1,0 +1,915 @@
+/* Telegram Clone CSS Dark Theme - Enhanced */
+
+/* Root colors with improved dark color scheme */
+.root {
+    -fx-base: #1c1c1e;
+    -fx-background: #000000;
+    -fx-control-inner-background: #1c1c1e;
+    -fx-control-inner-background-alt: #2c2c2e;
+    -fx-accent/* Dark theme message styling overrides */
+.message-sender {
+    -fx-text-fill: #8e8e93;
+}
+
+.message-time.own {
+    -fx-text-fill: rgba(255,255,255,0.6);
+}
+
+.message-time.other {
+    -fx-text-fill: #8e8e93;
+}
+
+/* Dark theme side panel overrides */
+.side-panel {
+    -fx-background-color: #1c1c1e;
+}
+
+.side-panel-header {
+    -fx-background-color: #2c2c2e;
+    -fx-border-color: #3a3a3c;
+}
+
+.side-panel-username {
+    -fx-text-fill: #ffffff;
+}
+
+.side-panel-close-button {
+    -fx-text-fill: #8e8e93;
+}
+
+.side-panel-menu-item {
+    -fx-text-fill: #ffffff;
+}
+
+.side-panel-menu-item:hover {
+    -fx-background-color: #3a3a3c;
+}
+
+/* Enhanced Message bubbles with modern design */ -fx-default-button: #007AFF;
+    -fx-focus-color: #007AFF;
+    -fx-faint-focus-color: #007AFF22;
+    -fx-font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, system-ui, sans-serif;
+}
+
+/* Dark theme button variants */
+.warning-button {
+    -fx-background-color: #ff9f00;
+    -fx-text-fill: white;
+}
+
+.warning-button:hover {
+    -fx-background-color: #e68900;
+}
+
+.camera-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: #8e8e93;
+}
+
+.content-container {
+    -fx-padding: 15px;
+    -fx-background-color: transparent;
+}
+
+/* Dark theme dialog and window styling */
+.root {
+    -fx-background-color: #1c1c1e;
+}
+
+BorderPane {
+    -fx-background-color: #1c1c1e;
+}
+
+Dialog {
+    -fx-background-color: #1c1c1e;
+}
+
+.dialog-pane {
+    -fx-background-color: #1c1c1e;
+}
+
+.dialog-pane .content {
+    -fx-background-color: #1c1c1e;
+}
+
+/* Enhanced Button Styling - Dark theme overrides */
+.button {
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-padding: 10px 18px;
+    -fx-font-size: 14px;
+    -fx-font-weight: 500;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 2, 0, 0, 1);
+    -fx-transition: all 0.2s ease;
+}
+
+.button:hover {
+    -fx-opacity: 0.9;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 4, 0, 0, 2);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.button:pressed {
+    -fx-opacity: 0.7;
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+/* Primary button styling */
+.button.primary {
+    -fx-background-color: linear-gradient(from 0% 0% to 0% 100%, #007AFF 0%, #0056CC 100%);
+    -fx-text-fill: white;
+}
+
+/* Secondary button styling */
+.button.secondary {
+    -fx-background-color: #2c2c2e;
+    -fx-text-fill: #007AFF;
+}
+
+/* Enhanced Text Field Styling with modern design */
+.text-field, .password-field, .text-area {
+    -fx-background-radius: 12px;
+    -fx-border-radius: 12px;
+    -fx-border-color: #3a3a3c;
+    -fx-border-width: 1px;
+    -fx-padding: 12px 16px;
+    -fx-font-size: 15px;
+    -fx-background-color: #1c1c1e;
+    -fx-text-fill: #ffffff;
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.2), 2, 0, 0, 1);
+}
+
+.text-field:focused, .password-field:focused, .text-area:focused {
+    -fx-border-color: #007AFF;
+    -fx-border-width: 2px;
+    -fx-background-color: #2c2c2e;
+    -fx-effect: dropshadow(gaussian, rgba(0,122,255,0.4), 8, 0, 0, 2);
+}
+
+/* Enhanced List View Styling */
+.list-view {
+    -fx-background-color: #1c1c1e;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 8, 0, 0, 2);
+}
+
+.list-view .list-cell {
+    -fx-padding: 12px 16px;
+    -fx-background-color: transparent;
+    -fx-border-color: rgba(255,255,255,0.1);
+    -fx-border-width: 0 0 0.5px 0;
+    -fx-background-radius: 0;
+    -fx-text-fill: #ffffff;
+}
+
+.list-view .list-cell:selected {
+    -fx-background-color: rgba(0,122,255,0.2);
+    -fx-background-radius: 8px;
+    -fx-effect: innershadow(gaussian, rgba(0,122,255,0.3), 2, 0, 0, 0);
+}
+
+.list-view .list-cell:hover {
+    -fx-background-color: rgba(255,255,255,0.05);
+    -fx-background-radius: 8px;
+}
+
+/* Scroll Pane Styling */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: #000000;
+}
+
+.scroll-pane .scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .scroll-bar:vertical .thumb {
+    -fx-background-color: #3a3a3c;
+    -fx-background-radius: 5px;
+}
+
+/* Tab Pane Styling */
+.tab-pane {
+    -fx-tab-min-width: 120px;
+}
+
+.tab-pane .tab {
+    -fx-background-color: #2c2c2e;
+    -fx-background-radius: 0;
+    -fx-border-color: transparent;
+    -fx-padding: 8px 16px;
+    -fx-text-fill: #ffffff;
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: #1c1c1e;
+    -fx-border-color: #007AFF;
+    -fx-border-width: 0 0 2px 0;
+}
+
+.tab-pane .tab-content-area {
+    -fx-background-color: #1c1c1e;
+    -fx-border-color: #3a3a3c;
+    -fx-border-width: 1px 0 0 0;
+}
+
+.tab-pane .tab-header-area {
+    -fx-background-color: #2c2c2e;
+}
+
+/* Label Styling */
+.label {
+    -fx-text-fill: #ffffff;
+}
+
+.label.title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff !important;
+    -fx-opacity: 1.0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.8), 1, 0, 0, 1);
+}
+
+.label.subtitle {
+    -fx-font-size: 12px;
+    -fx-text-fill: #c7c7cc !important;
+    -fx-opacity: 1.0;
+}
+
+/* Modern CheckBox Styling */
+.check-box {
+    -fx-font-size: 14px;
+    -fx-text-fill: #ffffff;
+    -fx-spacing: 10px;
+}
+
+.check-box .box {
+    -fx-background-color: #1c1c1e;
+    -fx-border-color: #3a3a3c;
+    -fx-border-width: 1.5px;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-min-width: 20px;
+    -fx-min-height: 20px;
+    -fx-max-width: 20px;
+    -fx-max-height: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 1, 0, 0, 0.5);
+}
+
+.check-box:hover .box {
+    -fx-border-color: #007AFF;
+    -fx-effect: dropshadow(gaussian, rgba(0,122,255,0.5), 2, 0, 0, 1);
+}
+
+.check-box:selected .box {
+    -fx-background-color: linear-gradient(from 0% 0% to 0% 100%, #007AFF 0%, #0056CC 100%);
+    -fx-border-color: #007AFF;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: white;
+    -fx-shape: "M2,6 L6,10 L14,2";
+    -fx-background-insets: 0;
+    -fx-scale-x: 0.8;
+    -fx-scale-y: 0.8;
+}
+
+.check-box:disabled {
+    -fx-opacity: 0.6;
+}
+
+.check-box:disabled .box {
+    -fx-background-color: #2c2c2e;
+    -fx-border-color: #3a3a3c;
+}
+
+/* Progress Indicator */
+.progress-indicator {
+    -fx-progress-color: #007AFF;
+}
+
+/* Alert and Dialog Styling */
+.dialog-pane {
+    -fx-background-color: #1c1c1e;
+    -fx-border-color: #3a3a3c;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: #2c2c2e;
+    -fx-border-color: #3a3a3c;
+    -fx-border-width: 0 0 1px 0;
+}
+
+/* Telegram-specific colors */
+.telegram-blue {
+    -fx-background-color: #007AFF;
+    -fx-text-fill: white;
+}
+
+.telegram-green {
+    -fx-background-color: #30d158;
+    -fx-text-fill: white;
+}
+
+.telegram-red {
+    -fx-background-color: #ff453a;
+    -fx-text-fill: white;
+}
+
+.telegram-gray {
+    -fx-background-color: #8e8e93;
+    -fx-text-fill: white;
+}
+
+/* Dark theme message styling overrides */
+.message-sender {
+    -fx-text-fill: #8e8e93;
+}
+
+.message-time.own {
+    -fx-text-fill: rgba(255,255,255,0.6);
+}
+
+.message-time.other {
+    -fx-text-fill: #8e8e93;
+}
+
+/* Voice button dark styling */
+.voice-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 20px;
+    -fx-pref-width: 40px;
+    -fx-pref-height: 40px;
+    -fx-cursor: hand;
+}
+
+.voice-button:hover {
+    -fx-background-color: rgba(255,255,255,0.1);
+}
+
+.voice-button:pressed {
+    -fx-background-color: rgba(255,255,255,0.2);
+}
+
+/* Send button dark styling */
+.send-button {
+    -fx-background-color: #007AFF;
+    -fx-text-fill: white;
+    -fx-background-radius: 20px;
+    -fx-pref-width: 40px;
+    -fx-pref-height: 40px;
+    -fx-cursor: hand;
+    -fx-font-size: 16px;
+}
+
+.send-button:hover {
+    -fx-background-color: #0056CC;
+}
+
+.send-button:pressed {
+    -fx-background-color: #004499;
+}
+
+/* Message input field dark styling */
+.message-input-field {
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-padding: 12px 16px;
+    -fx-border-color: #3a3a3c;
+    -fx-border-width: 1px;
+    -fx-background-color: #1c1c1e;
+    -fx-text-fill: #ffffff;
+}
+
+.message-input-field:focused {
+    -fx-border-color: #007AFF;
+    -fx-border-width: 2px;
+    -fx-background-color: #2c2c2e;
+}
+
+/* Channel mute area dark styling */
+.channel-mute-area {
+    -fx-padding: 12px 16px;
+    -fx-border-color: #3a3a3c;
+    -fx-border-width: 1px 0 0 0;
+}
+
+.channel-mute-button {
+    -fx-background-color: #2c2c2e;
+    -fx-text-fill: #8e8e93;
+    -fx-background-radius: 20px;
+    -fx-padding: 12px 20px;
+    -fx-font-size: 14px;
+}
+
+/* Chat header dark styling */
+.chat-header {
+    -fx-cursor: hand;
+    -fx-padding: 12px 16px;
+    -fx-border-color: #3a3a3c;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.chat-area {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 8, 0, -2, 0);
+}
+
+/* Enhanced Message bubbles with modern design */
+.message-bubble {
+    -fx-background-radius: 18px;
+    -fx-padding: 12px 16px;
+    -fx-max-width: 400px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 6, 0, 0, 2);
+}
+
+.message-bubble.own {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #007AFF 0%, #0056CC 100%);
+    -fx-text-fill: white;
+}
+
+.message-bubble.other {
+    -fx-background-color: #1c1c1e;
+    -fx-border-color: rgba(255,255,255,0.1);
+    -fx-border-width: 1px;
+    -fx-border-radius: 18px;
+}
+
+/* Enhanced Message text styling */
+.message-text {
+    -fx-font-family: "SF Pro Text", -apple-system, system-ui, sans-serif;
+    -fx-font-size: 15px;
+    -fx-line-spacing: 2px;
+}
+
+.message-text.own {
+    -fx-text-fill: rgba(255,255,255,0.95);
+}
+
+.message-text.other {
+    -fx-text-fill: #ffffff;
+}
+
+/* Dark theme text and label overrides */
+.field-value {
+    -fx-text-fill: #ffffff;
+}
+
+/* Sidebar styling */
+.sidebar {
+    -fx-background-color: #1c1c1e;
+    -fx-min-width: 300px;
+    -fx-max-width: 300px;
+}
+
+/* Chat area styling */
+.chat-area {
+    -fx-background-color: #000000;
+}
+
+.chat-header {
+    -fx-background-color: #1c1c1e;
+    -fx-border-color: #3a3a3c;
+    -fx-border-width: 0 0 1px 0;
+    -fx-padding: 12px 16px;
+}
+
+.message-input-area {
+    -fx-background-color: #1c1c1e;
+    -fx-border-color: #3a3a3c;
+    -fx-border-width: 1px 0 0 0;
+    -fx-padding: 12px;
+}
+
+/* Attachment button styling */
+.attach-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 20px;
+    -fx-cursor: hand;
+    -fx-padding: 8px;
+    -fx-min-width: 36px;
+    -fx-min-height: 36px;
+    -fx-max-width: 36px;
+    -fx-max-height: 36px;
+}
+
+.attach-button:hover {
+    -fx-background-color: #2c2c2e;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.attach-button:pressed {
+    -fx-background-color: #3a3a3c;
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+}
+
+/* Profile button styling */
+.profile-button {
+    -fx-text-fill: transparent;
+    -fx-content-display: graphic-only;
+}
+
+.profile-button .text {
+    -fx-text-fill: transparent;
+}
+
+/* Hide MenuButton dropdown arrow */
+.no-arrow-button .arrow-button {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-min-width: 0;
+    -fx-pref-width: 0;
+    -fx-max-width: 0;
+}
+
+.no-arrow-button .arrow {
+    -fx-background-color: transparent;
+    -fx-shape: "";
+}
+
+/* Modern enhancement styles */
+
+/* Enhanced chat header with better spacing */
+.chat-header {
+    -fx-background-color: #1c1c1e;
+    -fx-border-color: rgba(255,255,255,0.1);
+    -fx-border-width: 0 0 1px 0;
+    -fx-padding: 16px 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 2, 0, 0, 1);
+}
+
+/* Enhanced sidebar with modern styling */
+.sidebar {
+    -fx-background-color: #000000;
+    -fx-min-width: 320px;
+    -fx-max-width: 320px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 4, 0, 2, 0);
+}
+
+/* Smooth transitions for interactive elements */
+.button, .list-cell, .text-field {
+    -fx-transition: all 0.2s ease-in-out;
+}
+
+/* Enhanced voice message styling */
+.voice-message-container {
+    -fx-background-color: rgba(0,122,255,0.15);
+    -fx-background-radius: 12px;
+    -fx-border-color: rgba(0,122,255,0.3);
+    -fx-border-width: 1px;
+    -fx-border-radius: 12px;
+    -fx-padding: 12px 16px;
+    -fx-effect: innershadow(gaussian, rgba(0,122,255,0.2), 2, 0, 0, 0);
+}
+
+/* Enhanced search container */
+.search-container {
+    -fx-background-color: #1c1c1e;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-padding: 8px 16px;
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.2), 2, 0, 0, 1);
+}
+
+.search-container:focused-within {
+    -fx-background-color: #2c2c2e;
+    -fx-border-color: #007AFF;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(gaussian, rgba(0,122,255,0.4), 8, 0, 0, 2);
+}
+
+/* Enhanced progress bars */
+.progress-bar {
+    -fx-background-radius: 2px;
+    -fx-background-color: rgba(255,255,255,0.2);
+}
+
+.progress-bar .bar {
+    -fx-background-radius: 2px;
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, #007AFF 0%, #0056CC 100%);
+}
+
+/* Modern scrollbar styling */
+.scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+    -fx-background-radius: 4px;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: rgba(255,255,255,0.3);
+    -fx-background-radius: 4px;
+    -fx-min-width: 8px;
+    -fx-max-width: 8px;
+}
+
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color: rgba(255,255,255,0.4);
+}
+
+/* Enhanced menu styling */
+.context-menu {
+    -fx-background-color: #1c1c1e;
+    -fx-background-radius: 8px;
+    -fx-border-color: rgba(255,255,255,0.2);
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.6), 12, 0, 0, 4);
+    -fx-padding: 4px 0;
+}
+
+.context-menu .menu-item {
+    -fx-padding: 8px 16px;
+    -fx-background-radius: 0;
+    -fx-text-fill: #ffffff;
+}
+
+.context-menu .menu-item:focused {
+    -fx-background-color: rgba(0,122,255,0.2);
+    -fx-background-radius: 6px;
+    -fx-text-fill: #007AFF;
+}
+
+/* FXML Inline Style Replacements - Dark Theme */
+
+/* Header and container styles */
+.header-container {
+    -fx-padding: 12px 16px;
+    -fx-border-color: #3a3a3c;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.main-container {
+    -fx-padding: 30px;
+}
+
+.section-container {
+    -fx-padding: 15px;
+}
+
+.button-container {
+    -fx-padding: 20px 0 0 0;
+}
+
+/* Typography classes */
+.app-title {
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-text-fill: #ffffff;
+}
+
+.app-subtitle {
+    -fx-font-size: 12px;
+    -fx-text-fill: #8e8e93;
+}
+
+.large-title {
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.medium-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.section-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+.subsection-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+.header-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+.page-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+.group-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+.field-label {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+.form-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+.small-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #ffffff;
+}
+
+.tiny-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #ffffff;
+}
+
+.micro-label {
+    -fx-font-size: 11px;
+    -fx-text-fill: #ff9f0a;
+    -fx-font-weight: bold;
+}
+
+.subtitle-text {
+    -fx-font-size: 16px;
+    -fx-text-fill: #8e8e93;
+}
+
+.small-subtitle {
+    -fx-font-size: 14px;
+    -fx-text-fill: #8e8e93;
+}
+
+.member-count {
+    -fx-font-size: 14px;
+    -fx-text-fill: #8e8e93;
+}
+
+.status-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #8e8e93;
+}
+
+/* Background styles */
+.login-background {
+    -fx-background-color: #1c1c1e;
+}
+
+.card-background {
+    -fx-background-color: #2c2c2e;
+    -fx-background-radius: 15px;
+    -fx-padding: 50px;
+    -fx-max-width: 400px;
+}
+
+.register-card {
+    -fx-background-color: #2c2c2e;
+    -fx-background-radius: 10px;
+    -fx-padding: 30px;
+    -fx-pref-width: 450px;
+}
+
+/* Button styles */
+.icon-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 20px;
+    -fx-pref-width: 40px;
+    -fx-pref-height: 40px;
+}
+
+.transparent-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.camera-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-font-size: 20px;
+}
+
+.login-button {
+    -fx-background-color: #007AFF;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8px;
+}
+
+.register-button {
+    -fx-background-color: #30d158;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8px;
+}
+
+.primary-action-button {
+    -fx-background-color: #007AFF;
+    -fx-text-fill: white;
+    -fx-background-radius: 6px;
+    -fx-padding: 10px 20px;
+}
+
+.secondary-action-button {
+    -fx-background-color: #2c2c2e;
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 6px;
+    -fx-padding: 10px 20px;
+}
+
+.warning-button {
+    -fx-background-color: #ff9f0a;
+    -fx-text-fill: white;
+    -fx-background-radius: 6px;
+    -fx-padding: 10px 20px;
+}
+
+.danger-button {
+    -fx-background-color: #ff453a;
+    -fx-text-fill: white;
+    -fx-background-radius: 6px;
+    -fx-padding: 10px 20px;
+}
+
+.success-button {
+    -fx-background-color: #30d158;
+    -fx-text-fill: white;
+}
+
+.delete-button {
+    -fx-text-fill: #ff453a;
+}
+
+.gray-button {
+    -fx-background-color: #48484a;
+    -fx-text-fill: white;
+    -fx-background-radius: 5px;
+}
+
+.small-register-button {
+    -fx-background-color: #30d158;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5px;
+}
+
+/* Form field styles */
+.large-text-field {
+    -fx-pref-height: 45px;
+    -fx-font-size: 15px;
+    -fx-background-radius: 8px;
+    -fx-background-color: #1c1c1e;
+    -fx-text-fill: #ffffff;
+}
+
+.medium-text-field {
+    -fx-pref-height: 35px;
+    -fx-font-size: 14px;
+    -fx-background-color: #1c1c1e;
+    -fx-text-fill: #ffffff;
+}
+
+/* Separator styles */
+.gray-separator {
+    -fx-background-color: #48484a;
+}
+
+/* Dark theme left sidebar */
+#leftSidebar {
+    -fx-background-color: #2b2b2b;
+    -fx-border-color: #555555;
+}
+
+/* Dark theme search field */
+#searchField {
+    -fx-background-color: #3a3a3a;
+    -fx-text-fill: #ffffff;
+    -fx-prompt-text-fill: #aaaaaa;
+}
+
+/* Dark theme message input */
+#messageInputField {
+    -fx-background-color: #3a3a3a;
+    -fx-text-fill: #ffffff;
+    -fx-prompt-text-fill: #aaaaaa;
+}
