@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
+
+<StackPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.telegram.controllers.MainController">
+   <!-- Main Application Content -->
+   <BorderPane fx:id="mainPane">
+      <left>
+         <!-- Left Sidebar -->
+         <VBox fx:id="leftSidebar" styleClass="sidebar" BorderPane.alignment="CENTER">
+            <children>
+               <!-- User Profile Header with Hamburger Menu -->
+               <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-padding: 16px; -fx-border-color: #e0e0e0; -fx-border-width: 0 0 1px 0;">
+                  <children>
+                     <Button fx:id="hamburgerMenuButton" styleClass="hamburger-button" 
+                             style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-pref-width: 40px; -fx-pref-height: 40px;">
+                        <graphic>
+                           <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                              <image>
+                                 <Image url="@../icons/dehaze_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png"/>
+                              </image>
+                              <effect>
+                                 <ColorAdjust brightness="-1.0" />
+                              </effect>
+                           </ImageView>
+                        </graphic>
+                     </Button>
+                     <Region HBox.hgrow="ALWAYS" />
+                     <Button fx:id="newChatButton" styleClass="icon-button" 
+                             style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-pref-width: 40px; -fx-pref-height: 40px;">
+                        <graphic>
+                           <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                              <image>
+                                 <Image url="@../icons/edit_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png"/>
+                              </image>
+                           </ImageView>
+                        </graphic>
+                     </Button>
+                  </children>
+               </HBox>
+               
+               <!-- Search Field -->
+               <HBox style="-fx-padding: 12px 16px;" alignment="CENTER_LEFT">
+                  <children>
+                     <TextField fx:id="searchField" promptText="Search" 
+                               style="-fx-background-radius: 20px; -fx-padding: 8px 16px; -fx-border-radius: 20px;" 
+                               HBox.hgrow="ALWAYS" />
+                  </children>
+               </HBox>
+               
+               <!-- Action Buttons Row -->
+               <HBox spacing="8.0" style="-fx-padding: 8px 16px;">
+                  <children>
+                     <Button fx:id="newGroupButton" styleClass="action-button" text="New Group" />
+                     <Button fx:id="newChannelButton" styleClass="action-button" text="New Channel" />
+                  </children>
+               </HBox>
+               
+               <!-- Chat List -->
+               <ListView fx:id="chatListView" VBox.vgrow="ALWAYS" />
+            </children>
+         </VBox>
+      </left>
+      
+      <center>
+         <!-- Chat Area -->
+         <VBox fx:id="chatArea">
+            <children>
+               <!-- Chat Header -->
+               <HBox alignment="CENTER_LEFT" spacing="12.0" style="-fx-padding: 16px; -fx-border-color: #e0e0e0; -fx-border-width: 0 0 1px 0; -fx-background-color: #f9f9f9;">
+                  <children>
+                     <Circle fx:id="onlineStatusIndicator" fill="#4CAF50" radius="6.0" visible="false" />
+                     <ImageView fx:id="chatProfileImageView" fitHeight="40.0" fitWidth="40.0" preserveRatio="true" visible="false" />
+                     <VBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                        <children>
+                           <Label fx:id="chatTitleLabel" style="-fx-font-weight: bold; -fx-font-size: 16px;" text="Select a chat" />
+                           <Label fx:id="chatSubtitleLabel" style="-fx-font-size: 13px; -fx-text-fill: #757575;" text="Choose a conversation to start messaging" />
+                           <Label fx:id="typingIndicatorLabel" style="-fx-font-size: 13px; -fx-text-fill: #4CAF50; -fx-font-style: italic;" text="typing..." visible="false" />
+                        </children>
+                     </VBox>
+                     
+                     <!-- Chat Options Menu (Three Dots) -->
+                     <MenuButton fx:id="chatOptionsMenuButton" mnemonicParsing="false" visible="false"
+                                styleClass="no-arrow-button"
+                                style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-pref-width: 40px; -fx-pref-height: 40px;">
+                        <graphic>
+                           <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                              <image>
+                                 <Image url="@../icons/more_vert_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png"/>
+                              </image>
+                              <effect>
+                                 <ColorAdjust brightness="-1.0" />
+                              </effect>
+                           </ImageView>
+                        </graphic>
+                        <items>
+                           <MenuItem fx:id="searchInChatMenuItem" mnemonicParsing="false" onAction="#handleSearchInCurrentChat" text="🔍 Search in Chat" />
+                           <MenuItem fx:id="mediaGalleryMenuItem" mnemonicParsing="false" onAction="#handleShowMediaGallery" text="🖼️ Media Gallery" />
+                           <SeparatorMenuItem mnemonicParsing="false" />
+                           <MenuItem fx:id="viewProfileMenuItem" mnemonicParsing="false" text="ℹ️ View Info" />
+                           <MenuItem fx:id="muteNotificationsMenuItem" mnemonicParsing="false" text="🔕 Mute Notifications" />
+                           <SeparatorMenuItem mnemonicParsing="false" />
+                           <MenuItem fx:id="clearHistoryMenuItem" mnemonicParsing="false" text="🗑️ Clear History" />
+                           <MenuItem fx:id="deleteChatMenuItem" mnemonicParsing="false" text="❌ Delete Chat" />
+                        </items>
+                     </MenuButton>
+                     
+                  </children>
+               </HBox>
+               
+               <!-- Selection Toolbar (Hidden by default) -->
+               <ToolBar fx:id="selectionToolbar" visible="false" style="-fx-background-color: #e3f2fd;">
+                  <items>
+                     <Label fx:id="selectionCountLabel" text="0 selected" />
+                     <Region HBox.hgrow="ALWAYS" />
+                     <Button fx:id="copySelectedButton" text="Copy" />
+                     <Button fx:id="deleteSelectedButton" text="Delete" />
+                     <Button fx:id="cancelSelectionButton" text="Cancel" />
+                  </items>
+               </ToolBar>
+               
+               <!-- Messages Area -->
+               <ScrollPane fx:id="messageScrollPane" fitToWidth="true" VBox.vgrow="ALWAYS">
+                  <content>
+                     <VBox fx:id="messageContainer" spacing="5.0" style="-fx-padding: 10px;" />
+                  </content>
+               </ScrollPane>
+               
+               <!-- Message Input Area -->
+               <HBox fx:id="messageInputArea" alignment="CENTER_LEFT" spacing="8.0" style="-fx-padding: 12px 16px; -fx-border-color: #e0e0e0; -fx-border-width: 1px 0 0 0;">
+                  <children>
+                     <Button fx:id="attachButton" styleClass="icon-button" 
+                             style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-pref-width: 36px; -fx-pref-height: 36px;">
+                        <graphic>
+                           <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                              <image>
+                                 <Image url="@../icons/attach_file_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png"/>
+                              </image>
+                           </ImageView>
+                        </graphic>
+                     </Button>
+                     <TextField fx:id="messageInputField" promptText="Type a message..." 
+                               style="-fx-background-radius: 20px; -fx-padding: 8px 16px; -fx-border-radius: 20px;" 
+                               HBox.hgrow="ALWAYS" />
+                     <Button fx:id="sendButton" styleClass="send-button" 
+                             style="-fx-background-color: #0088cc; -fx-text-fill: white; -fx-background-radius: 20px; -fx-pref-width: 36px; -fx-pref-height: 36px;">
+                        <graphic>
+                           <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                              <image>
+                                 <Image url="@../icons/send_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png"/>
+                              </image>
+                           </ImageView>
+                        </graphic>
+                     </Button>
+                     <Button fx:id="voiceButton" styleClass="voice-button" 
+                             style="-fx-background-color: transparent; -fx-background-radius: 20px; -fx-pref-width: 36px; -fx-pref-height: 36px;">
+                        <graphic>
+                           <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                              <image>
+                                 <Image url="@../icons/mic_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png"/>
+                              </image>
+                           </ImageView>
+                        </graphic>
+                     </Button>
+                  </children>
+               </HBox>
+               
+               <!-- Channel Mute/Unmute Button (Hidden by default, shown for restricted channels) -->
+               <HBox fx:id="channelMuteArea" alignment="CENTER" spacing="8.0" style="-fx-padding: 12px 16px; -fx-border-color: #e0e0e0; -fx-border-width: 1px 0 0 0;" visible="false">
+                  <children>
+                     <Button fx:id="channelMuteButton" text="🔇 You are muted in this channel" 
+                             style="-fx-background-color: #f5f5f5; -fx-text-fill: #757575; -fx-background-radius: 20px; -fx-padding: 12px 24px; -fx-font-size: 14px;" 
+                             HBox.hgrow="ALWAYS" maxWidth="Infinity" />
+                  </children>
+               </HBox>
+            </children>
+         </VBox>
+      </center>
+   </BorderPane>
+   
+   <!-- Side Panel Overlay (Initially Hidden) - Positioned on top -->
+   <StackPane fx:id="overlayPane" visible="false" style="-fx-background-color: rgba(0,0,0,0.3);" StackPane.alignment="TOP_LEFT">
+      <VBox fx:id="sidePanel" prefWidth="320" style="-fx-background-color: #2b2b2b; -fx-padding: 0;" StackPane.alignment="TOP_LEFT">
+         <children>
+            <!-- Side Panel Header with Profile -->
+            <VBox style="-fx-background-color: #1e1e1e; -fx-padding: 24px 16px 16px 16px;" spacing="12">
+               <children>
+                  <HBox alignment="CENTER_LEFT" spacing="12">
+                     <children>
+                        <StackPane fx:id="sidePanelProfileContainer">
+                           <Circle fx:id="sidePanelProfileCircle" fill="#E0E0E0" radius="30.0" stroke="#CCCCCC" strokeWidth="1.0" />
+                           <ImageView fx:id="sidePanelProfileImageView" fitHeight="60.0" fitWidth="60.0" preserveRatio="true" visible="false">
+                              <clip>
+                                 <Circle radius="30.0" />
+                              </clip>
+                           </ImageView>
+                        </StackPane>
+                        <VBox spacing="4" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label fx:id="sidePanelUsernameLabel" text="AmirHossein" style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px;" />
+                              <Label text="Set Emoji Status" style="-fx-text-fill: #8e8e93; -fx-font-size: 14px;" />
+                           </children>
+                        </VBox>
+                        <Button fx:id="closeSidePanelButton" style="-fx-background-color: transparent; -fx-text-fill: #8e8e93; -fx-font-size: 18px;" text="✕" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            
+            <!-- Side Panel Menu Items -->
+            <VBox style="-fx-padding: 8px 0;" spacing="0">
+               <children>
+                  <Button fx:id="sidePanelProfileButton" onAction="#handleProfile" alignment="CENTER_LEFT" maxWidth="Infinity" 
+                          style="-fx-background-color: transparent; -fx-text-fill: white; -fx-padding: 12px 20px; -fx-font-size: 16px;"
+                          text="ℹ️ My Info" />
+                  <Button fx:id="sidePanelNewGroupButton" onAction="#handleNewGroup" alignment="CENTER_LEFT" maxWidth="Infinity"
+                          style="-fx-background-color: transparent; -fx-text-fill: white; -fx-padding: 12px 20px; -fx-font-size: 16px;"
+                          text="👥 New Group" />
+                  <Button fx:id="sidePanelNewChannelButton" onAction="#handleNewChannel" alignment="CENTER_LEFT" maxWidth="Infinity"
+                          style="-fx-background-color: transparent; -fx-text-fill: white; -fx-padding: 12px 20px; -fx-font-size: 16px;"
+                          text="📢 New Channel" />
+                  <Button fx:id="sidePanelContactsButton" alignment="CENTER_LEFT" maxWidth="Infinity"
+                          style="-fx-background-color: transparent; -fx-text-fill: white; -fx-padding: 12px 20px; -fx-font-size: 16px;"
+                          text="👥 Contacts" />
+                  <Button fx:id="sidePanelCallsButton" alignment="CENTER_LEFT" maxWidth="Infinity"
+                          style="-fx-background-color: transparent; -fx-text-fill: white; -fx-padding: 12px 20px; -fx-font-size: 16px;"
+                          text="📞 Calls" />
+                  <Button fx:id="sidePanelSavedButton" alignment="CENTER_LEFT" maxWidth="Infinity"
+                          style="-fx-background-color: transparent; -fx-text-fill: white; -fx-padding: 12px 20px; -fx-font-size: 16px;"
+                          text="🔖 Saved Messages" />
+                  <Button fx:id="sidePanelSettingsButton" onAction="#handleSettings" alignment="CENTER_LEFT" maxWidth="Infinity"
+                          style="-fx-background-color: transparent; -fx-text-fill: white; -fx-padding: 12px 20px; -fx-font-size: 16px;"
+                          text="⚙️ Settings" />
+                  
+                  <!-- Night Mode Toggle -->
+                  <HBox alignment="CENTER_LEFT" style="-fx-padding: 12px 20px;" spacing="12">
+                     <children>
+                        <Label text="🌙 Night Mode" style="-fx-text-fill: white; -fx-font-size: 16px;" HBox.hgrow="ALWAYS" />
+                        <ToggleButton fx:id="nightModeToggle" style="-fx-background-color: #0088cc; -fx-background-radius: 12px;" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            
+            <!-- Bottom section with version info -->
+            <Region VBox.vgrow="ALWAYS" />
+            <VBox style="-fx-padding: 16px 20px 24px 20px;" spacing="4">
+               <children>
+                  <Label text="Telegram Desktop" style="-fx-text-fill: #8e8e93; -fx-font-size: 13px;" />
+                  <Label text="Version 5.16.3 - About" style="-fx-text-fill: #8e8e93; -fx-font-size: 13px;" />
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </StackPane>
+</StackPane>

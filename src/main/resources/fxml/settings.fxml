@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.telegram.controllers.SettingsController">
+   <center>
+      <VBox spacing="20.0">
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+         
+         <Label styleClass="header-label" text="Settings" />
+         <Separator />
+         
+         <!-- Appearance Settings -->
+         <VBox spacing="10.0">
+            <Label styleClass="section-label" text="Appearance" />
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <Label text="Theme:" />
+               <ComboBox fx:id="themeComboBox" promptText="Select theme" />
+            </HBox>
+         </VBox>
+         
+         <Separator />
+         
+         <!-- Privacy Settings -->
+         <VBox spacing="10.0">
+            <Label styleClass="section-label" text="Privacy" />
+            <CheckBox fx:id="showLastSeenCheckBox" text="Show last seen status" />
+            <CheckBox fx:id="readReceiptsCheckBox" text="Send read receipts" />
+            <CheckBox fx:id="typingIndicatorsCheckBox" text="Show typing indicators" />
+         </VBox>
+         
+      </VBox>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER_RIGHT" spacing="10.0">
+         <padding>
+            <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+         </padding>
+         <Button fx:id="cancelButton" cancelButton="true" text="Cancel" />
+         <Button fx:id="applyButton" defaultButton="true" text="Apply" />
+      </HBox>
+   </bottom>
+</BorderPane>
